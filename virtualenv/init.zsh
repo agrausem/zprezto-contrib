@@ -1,3 +1,12 @@
+if [[ -d "$HOME/.pyenv" ]]
+then
+	export PYENV_ROOT="$HOME/.pyenv"
+	command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
+fi
+
+
 if [[ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]]
 then
 	export VIRTUALENVWRAPPER_PYTHON=$(which python3)
